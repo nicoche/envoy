@@ -500,6 +500,7 @@ void DnsResolverImpl::AddrInfoPendingResolution::startResolutionImpl(int family)
 
 DnsResolverImpl::AddrInfoPendingResolution::AvailableInterfaces
 DnsResolverImpl::AddrInfoPendingResolution::availableInterfaces() {
+  return {true, true};
   if (!Api::OsSysCallsSingleton::get().supportsGetifaddrs()) {
     // Maintain no-op behavior if the system cannot provide interface information.
     return {true, true};
